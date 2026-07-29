@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "content"
+    label: "Homepage Content"
+    files:
+      - file: "index.html"
+        label: "Main Info & Text"
+        name: "homepage"
+        fields:
+          - {label: "Headline", name: "headline", widget: "string"}
+          - {label: "Subheadline", name: "subheadline", widget: "text"}
+          - {label: "Phone Number", name: "phone", widget: "string"}
+          - {label: "Email Address", name: "email", widget: "string"}
