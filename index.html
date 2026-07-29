@@ -1,13 +1,255 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ABL Contracting Admin Panel</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABL Contracting | Missouri Carpentry & Contracting</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandCoral: '#D8685D',
+                        brandSlate: '#2E3238',
+                        brandGrey: '#4B4F56'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
-<body>
-  <!-- Decap CMS script -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- TOP STRIPE (Matches business card border) -->
+    <div class="h-3 bg-brandGrey w-full"></div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-brandSlate text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- LOGO -->
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl sm:text-3xl font-black tracking-wider text-white">ABL</span>
+                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brandCoral border-l-2 border-slate-600 pl-3">Contracting</span>
+                </div>
+                
+                <!-- Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#services" class="hover:text-brandCoral transition">Services</a>
+                    <a href="#about" class="hover:text-brandCoral transition">Why Us</a>
+                    <a href="#gallery" class="hover:text-brandCoral transition">Projects</a>
+                    <a href="#contact" class="bg-brandCoral hover:bg-red-600 text-white font-bold px-5 py-2.5 rounded-md transition shadow-md">
+                        Get Free Estimate
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <div class="md:hidden">
+                    <a href="#contact" class="bg-brandCoral text-white px-4 py-2 rounded font-bold text-sm">Estimate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-brandSlate text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:w-3/4 lg:w-2/3">
+                <span class="inline-block bg-brandCoral/20 text-brandCoral font-bold px-4 py-1.5 rounded-md text-xs sm:text-sm mb-4 border border-brandCoral/30 uppercase tracking-wide">
+                    Missouri General Contracting & Carpentry
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+                    All Your Carpentry & Remodeling Needs.
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
+                    Specializing in finish work, custom trim out, cabinets, framing, flooring, painting, and general contracting.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-brandCoral hover:bg-red-600 text-white font-bold px-8 py-4 rounded-lg text-lg text-center shadow-lg transition">
+                        Request Free Estimate
+                    </a>
+                    <a href="#services" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-lg text-lg text-center border border-slate-700 transition">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES SECTION (MATCHED TO BUSINESS CARD) -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Our Services</h2>
+            <div class="w-16 h-1 bg-brandCoral mx-auto mb-4"></div>
+            <p class="text-slate-600 max-w-2xl mx-auto">Precision craftsmanship and attention to detail on every job, large or small.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:border-brandCoral transition">
+                <div class="w-12 h-12 bg-red-50 text-brandCoral rounded-lg flex items-center justify-center text-2xl mb-5">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Finish Work & Trim Out</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Detailed trim, baseboards, crown molding, casing, doors, and custom interior woodwork.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:border-brandCoral transition">
+                <div class="w-12 h-12 bg-red-50 text-brandCoral rounded-lg flex items-center justify-center text-2xl mb-5">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Cabinets & Carpentry</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Cabinet installation, custom built-ins, and woodwork designed specifically for your home.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:border-brandCoral transition">
+                <div class="w-12 h-12 bg-red-50 text-brandCoral rounded-lg flex items-center justify-center text-2xl mb-5">
+                    <i class="fa-solid fa-cubes"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Framing Work</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Solid framing for wall modifications, room additions, decks, and structural projects.</p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:border-brandCoral transition">
+                <div class="w-12 h-12 bg-red-50 text-brandCoral rounded-lg flex items-center justify-center text-2xl mb-5">
+                    <i class="fa-solid fa-paint-roller"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Interior & Exterior Painting</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Professional painting and prep work to clean up walls, trim, and surfaces.</p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:border-brandCoral transition">
+                <div class="w-12 h-12 bg-red-50 text-brandCoral rounded-lg flex items-center justify-center text-2xl mb-5">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Flooring Installation</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Quality hardwood, LVP, and laminate flooring installed cleanly and durable.</p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:border-brandCoral transition">
+                <div class="w-12 h-12 bg-red-50 text-brandCoral rounded-lg flex items-center justify-center text-2xl mb-5">
+                    <i class="fa-solid fa-hammer"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">General Contracting</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Decks, remodels, repairs, and custom builds. Pretty much whatever carpentry needs you have.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM / RECENT WORK PREVIEW -->
+    <section id="gallery" class="py-16 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-brandCoral font-bold uppercase text-xs tracking-widest">Live Portfolio Feed</span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-1">Recent Job Photos</h2>
+                </div>
+                <p class="text-sm text-slate-500 mt-2 md:mt-0">
+                    <i class="fa-brands fa-instagram text-brandCoral mr-1"></i> Connects automatically to Instagram
+                </p>
+            </div>
+
+            <!-- Photo Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square bg-slate-300 rounded-lg overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Carpentry Work">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-bold">Custom Trim</div>
+                </div>
+                <div class="aspect-square bg-slate-300 rounded-lg overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Cabinets">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-bold">Cabinets</div>
+                </div>
+                <div class="aspect-square bg-slate-300 rounded-lg overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Framing">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-bold">Framing</div>
+                </div>
+                <div class="aspect-square bg-slate-300 rounded-lg overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Flooring">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-bold">Flooring</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 sm:p-12">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-black text-slate-900 mb-4">Get a Free Estimate</h2>
+                    <p class="text-slate-600 mb-8">Reach out today to discuss your carpentry, framing, painting, or remodeling project in Missouri.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-brandCoral text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-bold">Location</p>
+                                <p class="font-bold text-slate-800">Missouri & Surrounding Areas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-brandCoral text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-bold">Email</p>
+                                <p class="font-bold text-slate-800">[Your Email Will Go Here] @gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-brandCoral text-lg">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-bold">Instagram</p>
+                                <p class="font-bold text-slate-800">@[Your Instagram Handle]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form data-netlify="true" name="contact" onsubmit="event.preventDefault(); alert('This demo form works! On Netlify, this will send real emails directly to you for free.');" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Your Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brandCoral focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Phone or Email</label>
+                        <input type="text" placeholder="(555) 000-0000 or email@domain.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brandCoral focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Project Details</label>
+                        <textarea rows="4" placeholder="Describe your finish work, carpentry, trim, painting, or remodeling job..." class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brandCoral focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brandCoral hover:bg-red-600 text-white font-extrabold py-4 rounded-lg shadow-md transition">
+                        Send Estimate Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandSlate text-slate-400 py-8 text-center text-sm border-t border-slate-800">
+        <p>&copy; ABL Contracting — Missouri Carpentry & General Contracting. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
